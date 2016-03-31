@@ -1,0 +1,135 @@
+.navbar-fixed-top {
+	background: #5CB85C;
+	text-align: center;
+}
+.navbar-fixed-top span {
+	color: #fff;
+	display: block;
+	font-size: 2rem;
+}
+.col-xs-3{
+	margin-top: -5rem;
+	margin-left: 37.5%;
+}
+.col-xs-5{
+	color:#808080;
+	font-size: 1.7rem;
+	margin-top: 1rem;
+	margin-left: 33%;
+}
+.col-xs-9 hr{
+	border: 1px solid #e1e1e1;
+}
+.col-xs-8{
+	font-size: 1.4rem;
+	font-weight: 300;
+	color: #808080;
+	margin-bottom: 0.6rem;
+}
+.progress {
+	width: 60%;
+	background-color: #f5f5f5;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+	height: 5px;
+	margin-bottom: 15px;
+	margin-left: 2rem;
+	overflow: hidden;
+}
+.progress-bar {
+	background-color: #337ab7;
+	box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15) inset;
+	color: #fff;
+	float: left;
+	font-size: 12px;
+	height: 100%;
+	line-height: 5px;
+	text-align: center;
+	transition: width 0.6s ease 0s;
+	width: 70%;
+}
+.progress-bar-success {
+	background-color: #5cb85c;
+}
+.participants{
+	height: 3rem;
+	font-size: 1.5rem;
+	background-color:#E1E1E1 ;
+	line-height: 3rem;
+}
+.participants p{
+	color:#808080;
+	line-height: 3rem;
+	margin-left: 10px;
+}
+.media-body p {
+	font-size: 1.3rem;
+	color: #666;
+	margin-top: 3%;
+	width: 15rem;
+}
+
+#myAct ul {
+	padding: 0;
+
+}
+
+#myAct ul li {
+	list-style: none;
+	margin: 1% 8% 0 10%;
+	padding-bottom: 1%;
+}
+.media-right a {
+	font-size: 1.5rem;
+	color: #A8A8A8;
+	margin-top: -1rem;
+}
+
+.media-right a:hover {
+	text-decoration: none;
+}
+.media-right p{
+	margin-left: -9rem;
+}
+.navbar .col-xs-6 {
+	height: 5.5em;
+	line-height: 5.5em;
+	float: left;
+	/*border-right: 2px solid #efefef;*/
+	background: #000;
+	opacity: 0.8;
+	text-align: center;
+	list-style: none;
+}
+#join{
+	border-right: 2px solid #efefef;
+}
+.navbar .col-xs-6 a{
+	color: #0C6;
+	font-size: 2.2rem;
+}
+.navbar .col-xs-6 a:hover{
+	text-decoration: none;
+}
+.navbar .col-xs-6 span{
+	font-size: 1.3rem;
+	color: red;
+}
+#loading {
+	font-size: 1.1rem;
+	width: 45%;
+	height: 1.8rem;
+	text-align: center;
+	background: #DBDBDB;
+	border: 1px solid #DBDBDB;
+	border-radius: 7px;
+	margin: 5% auto 0;
+	margin-bottom: 10rem;
+}
+
+#loading a:hover {
+	display: block;
+	color: black;
+	text-decoration: none;
+}
+

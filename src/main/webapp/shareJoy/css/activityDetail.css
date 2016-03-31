@@ -1,0 +1,169 @@
+.dialog {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.6);
+}
+.dialog .guanggao {
+  width: 5rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -2.5rem;
+  bottom: 0.3rem;
+}
+.dialog .sharetip {
+  width: 4rem;
+  position: absolute;
+  right: 50px;
+  top: 7rem;
+}
+.dialog .sharetit {
+  width: 3.5rem;
+  position: absolute;
+  right: 10px;
+  top: 2rem;
+}
+#body {
+  width: 94%;
+  min-height: 8rem;
+  background: white;
+  overflow: hidden;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  margin-left: -47%;
+  text-align: left;
+  color: #777777;
+  font-weight: bold;
+  letter-spacing: 1px;
+  word-spacing: 1em;
+}
+#body .act-head-message {
+  height: 75px;
+  border-bottom: 2px solid #F5F5F5;
+}
+#body .act-head-message .headimg {
+  height: 1rem;
+  position: absolute;
+  left: 10px;
+  margin-top: 10px;
+  -webkit-border-radius:0.5rem;
+  -moz-border-radius:0.5rem;
+  border-radius:0.5rem;
+}
+#body .act-head-message .detail {
+  list-style: none;
+  margin-top: 10px;
+  width: 80%;
+  position: absolute;
+  left: 60px;
+}
+#body .act-head-message .detail .per-name {
+  font-size: 14px;
+}
+#body .act-head-message p {
+  line-height: 25px;
+  position: absolute;
+  margin-top: 50px;
+  padding-left: 10px;
+  font-size: 13px;
+}
+#body .act-place-time {
+  height: 80px;
+}
+#body .act-place-time ul li {
+  list-style: none;
+  height: 1rem;
+  line-height: 1rem;
+  padding-left: 30px;
+  border-bottom: 2px solid #F5F5F5;
+}
+#body .act-place-time .place {
+  background: url(../asset/place.png) no-repeat;
+  background-size: 0.3rem;
+  background-position: 10px;
+}
+#body .act-place-time .time {
+  background: url(../asset/time.png) no-repeat;
+  background-size: 0.3rem;
+  background-position: 10px;
+}
+#body .act-text {
+  text-indent: 2em;
+  padding: 20px 10px;
+  border-bottom: 2px solid #F5F5F5;
+  min-height: 60px;
+  overflow: hidden;
+}
+#body .act-join {
+  min-height: 70px;
+  overflow: hidden;
+}
+#body .act-join p {
+  padding-left: 10px;
+  line-height: 30px;
+}
+#body .act-join p span {
+  margin-left: 5px;
+}
+#body .act-join .act-member {
+  width: 95%;
+  line-height: 1rem;
+  min-height: 1rem;
+  overflow: hidden;
+  list-style: none;
+  padding-bottom: 32767px;
+  margin-bottom: -32767px;
+}
+#body .act-join .act-member li {
+  float: left;
+}
+#body .act-join .act-member img {
+  width: 0.62rem;
+  vertical-align: middle;
+  margin-left: 10px;
+  -webkit-border-radius:0.31rem;
+  -moz-border-radius:0.31rem;
+  border-radius:0.31rem;
+}
+.act-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  width: 100%;
+  margin-left: -50%;
+}
+.act-btn div {
+  width: 40%;
+  float: left;
+  margin-left: 20px;
+  background: pink;
+  line-height: 40px;
+  text-align: center;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+  word-spacing: 1em;
+  font-size: 14px;
+}
+.act-btn .overdue {
+  background: #A1A1A1;
+}
+@media (min-width: 500px) {
+  #body,
+  .act-btn {
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+  }
+}

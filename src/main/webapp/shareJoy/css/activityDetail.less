@@ -1,0 +1,167 @@
+  .dialog{
+    display: none;
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.6);
+    .guanggao{
+       width:5rem;
+       position: absolute;
+       left:50%;
+       margin-left: -2.5rem;
+       bottom:0.3rem;
+    }
+    .sharetip{
+       width:4rem;
+       position: absolute;
+       right:50px;
+       top:7rem;
+    }
+    .sharetit{
+      width:3.5rem;
+       position: absolute;
+       right:10px;
+       top:2rem;
+    }
+  }
+#body{
+  width: 94%;
+  min-height: 8rem;
+  background: white;
+  overflow: hidden;
+  position: absolute;
+  top:20px;
+  left:50%;
+  margin-left:-47%; 
+  text-align: left;
+   color: #777777;
+   font-weight: bold;
+   letter-spacing: 1px;
+   word-spacing: 1em;
+  .act-head-message{
+    height:75px;
+    border-bottom: 2px solid #F5F5F5;
+    .headimg{
+      height:1rem;
+      position: absolute;
+      left:10px;
+      margin-top: 10px;
+    
+    }
+    .detail{
+      list-style: none;
+      margin-top:10px;
+      width:80%;
+      position: absolute;
+      left:60px;
+      .per-name{
+        font-size: 14px;
+      }
+    }
+    p{
+      line-height: 25px;
+      position: absolute;
+      margin-top: 50px;
+      padding-left:10px;
+      font-size: 13px;
+    }
+  }
+  .act-place-time{
+    height:80px;
+    ul li{
+      list-style: none;
+      height:1rem;
+      line-height: 1rem;
+      padding-left: 30px;
+      border-bottom: 2px solid #F5F5F5;
+    }
+    .place{
+      background: url(../asset/place.png) no-repeat;
+      background-size:0.3rem;
+      background-position: 10px; 
+    }
+    .time{
+     background: url(../asset/time.png) no-repeat;
+     background-size:0.3rem;
+     background-position: 10px; 
+    }
+  }
+  .act-text{
+    text-indent: 2em;
+    padding: 20px 10px;
+     border-bottom: 2px solid #F5F5F5;
+    min-height: 60px;
+    overflow: hidden;
+  }
+  .act-join{
+    min-height:70px;
+    overflow: hidden;
+    p{
+      padding-left:10px;
+      line-height:30px;
+      span{
+           margin-left: 5px;
+        }
+    }
+    .act-member{
+        width: 95%;
+        line-height:1rem;
+        min-height: 1rem;
+        overflow: hidden;
+        list-style: none;
+        padding-bottom: 32767px;
+        margin-bottom: -32767px;
+        
+        li{
+          float: left;
+        }
+        img{
+          width:0.65rem;
+          vertical-align: middle;
+          margin-left: 10px;
+
+        }
+    }
+  }
+
+}
+.act-btn{
+  position: absolute;
+  left:50%;
+  bottom:20px;
+  width:100%;
+  margin-left:-50%;
+  div{
+    width:40%;
+    float: left;
+    margin-left:20px;
+    background: pink;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+    word-spacing: 1em;
+    font-size: 14px;
+  }
+  .overdue{
+    background:#A1A1A1;
+
+  }
+  .share{
+  }
+}
+@media (min-width: 500px) {
+  #body,.act-btn{
+    width:400px;
+    position: absolute;
+    left:50%;
+    margin-left:-200px;
+  }
+}

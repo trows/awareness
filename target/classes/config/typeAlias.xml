@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.awareness.trows.entity.Account" alias="Account"/>
+        <typeAlias type="com.awareness.trows.entity.Activity" alias="Activity"/>
+        <typeAlias type="com.awareness.trows.entity.ActPat" alias="ActPat"/>
+        <typeAlias type="com.awareness.trows.entity.Relation" alias="Relation"/>
+    </typeAliases>
+</configuration>

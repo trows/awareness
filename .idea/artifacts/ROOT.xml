@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ROOT">
+    <output-path>F:/warOutPort</output-path>
+    <root id="archive" name="ROOT.war">
+      <element id="artifact" artifact-name="awareness:war exploded" />
+    </root>
+  </artifact>
+</component>

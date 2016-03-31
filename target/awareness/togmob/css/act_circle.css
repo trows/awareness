@@ -1,0 +1,193 @@
+html{ font-size: 62.5%;font-family:font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif;overflow-y:hidden}
+/*.navbar-fixed-top {
+    /*background:#F64231;*/
+    /*text-align: center;*/
+    /*height: 85px;*/
+/*}*/
+/*.navbar-default span{*/
+   /*color: white;*/
+    /*font-size: 4.0rem;*/
+    /*font-weight: 500;*/
+    /*line-height: 105px;*/
+/*}*/
+#person{
+    margin-top:1rem;
+}
+#head_pic{
+    margin-top:-12.2rem;
+}
+#person img{
+    display:block;
+    margin:4rem auto 0;
+    border:none;
+}
+.name{
+    text-align:center;
+    font-size:2rem;
+    color:#fff;
+    font-weight:500;
+}
+header{
+    width:100%;
+    height:20rem;
+    background:#F64231;
+    z-index:-999;
+    position:relative;
+}
+section{
+    width:100%;
+    overflow:hidden;
+    position:absolute;
+    z-index:-999;
+    margin-bottom:6rem;
+}
+/*活动详情部分开始*/
+#myAct{
+    margin-top: 5rem;
+    height: 300px;
+    overflow-y: scroll;
+}
+#myAct ul li{
+    list-style: none;
+}
+#myAct hr{
+    width: 100%;
+    margin-left: -20px;
+}
+.act_name{          /*活动名称*/
+    margin-top: 10px;
+    font-size: 1.7rem;
+    font-weight: bold;
+	color:#535353;
+}
+.act_num{           /*报名参加人数*/
+    margin-top: -5px;
+    font-size: 1.4rem;
+    color:#F74332;
+}
+.media-right img{
+    margin-left: -5rem;
+}
+.progress_sm {
+    width:90%;          /*修改进度条的长短*/
+    height: 7px;          /*修改进度条的高度*/
+    margin-bottom: 15px;
+    overflow: hidden;
+    background-color:#c4c4c4;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    margin-left:-0.5rem;
+    margin-top:0.5rem;
+}
+.progress_sm span{      /*进度提示*/
+    padding-top:-0.5rem;
+}
+.progress-bar_sm {
+    float: left;
+    width: 70%;           /*修改进度条的进度*/
+    height: 100%;
+    font-size: 12px;
+    line-height: 5px;
+    color: #fff;
+    text-align: center;
+    background-color:#F64331;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+p.descri1{          /*类名为descri1时，报名进行中*/
+    margin-top:-0.7rem;
+    margin-left:-0.5rem;
+    font-size:1.5rem;
+    font-family:inherit;
+    color:#F84838;
+}
+p.descri2 {              /*为descri2时，报名已结束*/
+    margin-top: -0.7rem;
+    margin-left: -0.5rem;
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: #BCC3C0;
+}
+.head_p {           /*头像的圆圈*/
+    margin-top: -6.2rem;
+    margin-left: 0.22rem;
+}
+/*活动详情部分结束*/
+.btn-danger{        /*按钮样式*/
+   background:#F64231;
+    width: 18rem;
+    height:4.0rem;
+    display: block;
+    margin: -0.5rem auto 0;
+    font-size: 1.8rem;
+	color:#fff;
+    line-height:2.5rem;
+    border-top:1px solid #EF968D;
+    border-left:1px solid #EF968D;
+    border-right:1px solid #EF968D;
+    border-bottom:1px solid #EF968D;
+    border-radius:4px;
+    box-shadow:0 1px 1px #BAB8B9;
+}
+
+.navbar{
+    margin-top:4rem;
+
+}
+#shadow{
+    background: #fff;
+    opacity: 0.9;
+    filter:alpha(opacity=90);
+    height: 100%;
+    width: 100%;
+    z-index:9999;
+    position: fixed;
+    top:0%;
+    left: 0%;
+}
+#act_style{
+    width:100%;
+    height:640px;
+    position: fixed;
+    top: 4%;
+    z-index: 999999;
+    margin: 10px auto 10px;
+}
+#act_style ul{
+    /*width:100%;*/
+    display:block;
+    list-style: none;
+}
+#act_style ul li{
+    width:100%;
+    height:11.5rem;
+    display:block;
+}
+#act_style ul li:first-child{
+    /*border:1px solid green;*/
+    height:9rem;
+
+}
+#act_style ul li img{
+    max-width:100%;
+    min-width:30%;
+    margin-top:2rem;
+    padding:0 1rem;
+}
+#close {
+    width: 100%;
+    position: fixed;
+    top: 90%;
+    left:48%;
+    z-index: 999999;
+    margin: 0 auto 10px;
+}
+
+#close img {
+    display: block;
+    margin: 0 auto 0;
+}

@@ -1,0 +1,72 @@
+.form-group {
+    /*border: 1px solid red;*/
+
+}
+
+.form-group label {
+    margin: 35% 0 0 3rem;
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.form-group input {
+    height: 4rem;
+    margin-left: 3rem;
+    width: 90%;
+    font-size: 1.1rem;
+    display: block;
+}
+
+.btn {
+    display: block;;
+    width: 13rem;
+    height: 4rem;
+    margin: 5rem auto 0;
+}
+
+#appDateTime2{
+    margin-top: 10%;
+}
+
+#sT {
+    position: relative;
+}
+
+#sT p {
+    position: absolute;
+    top: 0.8rem;
+    left: 3.5rem;
+}
+
+#sT input {
+    padding-left: 6rem;
+}
+
+#eT {
+    position: relative;
+}
+
+#eT p {
+    position: absolute;
+    top: 0.8rem;
+    left: 3.5rem;
+}
+
+#eT input {
+    padding-left: 6rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+textarea {
+    margin-left: 3rem;
+}
+
+.form-group span {
+    margin-left: 3rem;
+    color: red;
+    font-size: 1.2rem;
+}

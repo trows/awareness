@@ -1,0 +1,19 @@
+*{margin: 0;padding: 0}
+#header img{
+    width: 100%;
+}
+.table{
+    text-align: center;
+}
+.table td img{
+    display: block;
+    margin: 0 auto 0;
+}
+.table{
+    color: dimgray;
+    font-size: 1.3rem;
+}
+#footer img{
+    display: block;
+    margin: 0 auto 0;
+}

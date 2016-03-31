@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.awareness.trows.entity.Relation">
+        <!--在如果用户关系不存在的前提下，添加用户关系-->
+        <insert id="addRelation" parameterType="Relation">
+                INSERT INTO relationship (masterId,friendId,hot,cntime) SELECT
+                #{masterId,jdbcType=BIGINT},#{friendId,jdbcType=BIGINT},0,NOW() FROM dual
+                WHERE NOT EXISTS (SELECT masterId FROM relationship WHERE masterId =#{masterId,jdbcType=BIGINT}
+                AND friendId = #{friendId,jdbcType=BIGINT})
+        </insert>
+        
+        <update id="increaseRel" parameterType="Relation">
+                UPDATE relationship SET hot = hot+1 WHERE
+                masterId =#{masterId,jdbcType=BIGINT}
+                AND friendId = #{friendId,jdbcType=BIGINT}
+        </update>
+</mapper>

@@ -1,0 +1,237 @@
+*{padding:0;margin:0;}
+body{
+	font-family:'微软雅黑',"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size:10px;
+	line-height:1.42857143;
+	color:#333;
+	background-color:transparent;
+	margin:0;
+	padding:0;
+	/*overflow-y: hidden;*/
+}
+footer,header,nav,section,summary{
+	display:block;
+	margin:0;
+	padding:0;
+}
+/*.navbar-fixed-top {*/
+/*width:100%;*/
+/*background:#F64231;*/
+/*text-align: center;*/
+/*height:4rem;*/
+/*}*/
+/*.navbar-default span{*/
+/*color: white;*/
+/*font-size:2.7em;*/
+/*font-weight: 500;*/
+/*line-height:4rem;*/
+/*}*/
+##person{
+	 margin-top:1rem;
+ }
+#head_pic{
+	/*margin-top:-10.8rem;*/
+	margin-top:-12.2rem;
+}
+#person img{
+	display:block;
+	margin:4rem auto 0;
+	border:none;
+}
+#name{
+	text-align:center;
+	font-size:2rem;
+	color:#fff;
+	font-weight:500;
+}
+header{
+	width:100%;
+	height:20rem;
+	background:#F64231;
+	z-index:-999;
+	position:relative;
+}
+section{
+	width:100%;
+	overflow:hidden;
+	position:absolute;
+	z-index:-999;
+	margin-bottom:6rem;
+}
+#myAct{
+	width:93%;
+	height:200px;
+	margin:-1.9rem auto;
+	overflow-y:scroll;
+	margin-bottom:4rem;
+	position:relative;
+}
+.navbar{
+	width:100%;
+	height:6rem;
+	position:absolute;
+	top:65rem;
+}
+#myAct ul{
+	display:block;
+}
+#myAct ul li{
+	width:100%;
+	height:75px;
+	list-style:none;
+	border-bottom:1px solid #C9C6D3;
+}
+.act_name{
+	margin-top: 13px;
+	font-size: 1.3rem;
+	color:#535353;
+	padding:0;
+}
+.act_num{
+	font-size: 1.2rem;
+	color:#535353;
+	padding:0;
+}
+.btn-danger{
+	width: 13rem;
+	height: 4rem;
+	display: block;
+	margin: 0 auto 0;
+	font-size: 1.8rem;
+	font-weight:bold;
+	background:#f64321;
+	border-top:1px solid #EF968D;
+	border-left:1px solid #EF968D;
+	border-right:1px solid #EF968D;
+	border-bottom:1px solid #EF968D;
+	border-radius:4px;
+	box-shadow:0 1px 1px #BAB8B9;
+}
+.progress_sm {
+	width:80%;
+	height: 5px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	background-color:#c4c4c4;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+	margin-left:2.7rem;
+	margin-top:0.5rem;
+}
+.progress_sm span{
+	padding-top:-0.5rem;
+}
+.progress-bar_sm {
+	float: left;
+	width: 70%;
+	height: 100%;
+	font-size: 12px;
+	line-height: 5px;
+	color: #fff;
+	text-align: center;
+	background-color:#F64331;
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+	-webkit-transition: width .6s ease;
+	-o-transition: width .6s ease;
+	transition: width .6s ease;
+}
+.media{
+	position:relative;
+}
+.media-left img {
+	margin-right:-0.2rem;
+	margin-top:0.2rem;
+	margin-left:1.5rem;
+	border:none;
+}
+.media-right img{
+	margin-left:-3.2rem;
+	border:2px solid #F64231;
+}
+.media-middle span{
+	margin-top:2.5rem;
+}
+#act_show ul{
+	width:100%;
+	display:block;
+	margin:1.0rem auto;
+	list-style:none;
+}
+#act_show li{
+	font-size:2.6em;
+	font-family:inherit;
+	color:#717171;
+	font-weight:bold;
+	list-style:none;
+	display:block;
+	width:100%;
+	height:2rem;
+}
+#act_show li span{
+	display:inline-block;
+	margin-left:5.0rem;
+}
+h3.list_name{
+	background:#C9C6D3;
+	width:90%;
+	height:2.2rem;
+	line-height:1.7;
+	font-family:inherit;
+	font-size:1.4rem;
+	font-weight:bold;
+	color:#707070;
+	border-radius:2px;
+	margin:2rem auto;
+	padding-left:0.8rem;
+}
+h3.list_name span{
+	padding-right:1rem;
+	color:#707070;
+}
+h3.list_name a:link,h3.list_name a:visited,h3.list_name a:hover,h3.list_name a:active{
+	font-family:inherit;
+	font-size:1.5rem;
+	font-weight:bold;
+	color:#7a7a7a;
+	text-decoration:none;
+}
+a{
+	outline:none;
+}
+.media-right .media-middle{
+	margin:0 auto 0;
+}
+#act_detail li{
+	line-height:18px;
+	font-size:1.4rem;
+}
+#act_detail{
+	margin-top:1rem;
+}
+.num1{
+	margin-left:0;
+	/*background:yellow;*/
+}
+.num2{
+	margin-left:4.0rem;
+}
+.col-xs-8{
+	width:75%;
+}
+.row{
+	width:100%;
+	margin:0.5rem auto;
+}
+.navbar-fixed-bottom{
+	margin-bottom:0.5rem;
+}
+.head_p{
+	margin-top:-6.4rem;
+	margin-left:0.20rem;
+	/*margin-top:-5.3rem;*/
+	/*margin-left:0.15rem;*/
+}
+	
+	

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.awareness.trows.entity.Activity">
+
+    <!--通过活动Id获取活动所有信息 （已使用）-->
+    <select id="getActivityById" parameterType="Long" resultType="Activity">
+        SELECT activityId,typeName,activityTitle,description,userId,userName,startTime,endTime,
+        deadLine,createTime,personNumber,location,privateCost,shareDepth,joinNow,remark,
+        joinCheck,hot FROM activity WHERE activityId = #{activityId} Limit 1
+	</select>
+
+    <!--添加活动 对用户发布的活动进行持久化（已使用）-->
+    <insert id="addActivity" parameterType="Activity">
+        INSERT INTO activity (activityId,typeName,activityTitle,description,userId,userName,startTime,
+        endTime,deadLine,createTime,personNumber,location,shareDepth)
+        VALUES (#{activityId,jdbcType=BIGINT},#{typeName,jdbcType=VARCHAR},#{activityTitle,jdbcType=VARCHAR},#{description,jdbcType=VARCHAR},
+        #{userId,jdbcType=BIGINT},#{userName,jdbcType=VARCHAR},#{startTime},#{endTime},#{deadLine},NOW(),
+        #{personNumber,jdbcType=INTEGER},#{location,jdbcType=VARCHAR},#{shareDepth})
+    </insert>
+
+    <!--通过用户id获取用户参与的活动信息 （已使用）-->
+    <select id="getMyJoinActivityListByUserId" parameterType="Long" resultType="Activity">
+        select activity.activityId,activity.activityTitle,activity.userId,activity.hot,activity.startTime,
+        activity.joinNow,activity.personNumber,activity.userName,activity.deadLine,activity.location,activity.createTime
+        from activity inner join ActPat where
+        ActPat.participator = #{userId} and
+        activity.activityId = ActPat.activityId ORDER BY activity.startTime DESC
+    </select>
+
+    <!--通过活动id删除活动极其关联数据（未使用）尝试写入多条语句 并且不会执行物理意义上的删除-->
+    <delete id="delActivity" parameterType="Long">
+        DELETE FROM activity WHERE activityId = #{activityId}
+    </delete>
+
+    <!--通过活动id 更新活动参与人数 （已使用）-->
+    <update id="updateJoinNum" parameterType="Long">
+        UPDATE activity SET joinNow = joinNow+1 WHERE activityId = #{activityId}
+    </update>
+
+    <!--通过用户id获取 用户发起的活动信息 （已使用）-->
+    <select id="getAUserActList" parameterType="Long">
+        SELECT activityId,activityTitle,userId,hot,startTime,joinNow,personNumber
+        FROM activity WHERE userId = {userId}
+    </select>
+
+    <update id="alterAct" parameterType="Activity">
+        UPDATE activity SET description = #{description,jdbcType=VARCHAR},startTime = #{startTime},
+        remark = CONCAT(remark,#{remark,jdbcType=VARCHAR}),
+        location = #{location,jdbcType=VARCHAR},personNumber = #{personNumber,jdbcType=INTEGER}
+        WHERE activityId = #{activityId}
+    </update>
+</mapper>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+">
+
+    <!-- 引入属性文件 -->
+    <context:property-placeholder location="classpath*:config/config.properties"/>
+
+    <!-- 自动扫描(自动注入) -->
+    <context:component-scan base-package="com.awareness.trows"/>
+
+
+
+    <!--=========================================定时任务配置======================================-->
+
+    <!--县城执行器配置，用于任务注册 配置任务线程池-->
+    <bean id="executor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="10"/>
+        <property name="maxPoolSize" value="100"/>
+        <property name="queueCapacity" value="500"/>
+    </bean>
+
+    <!--配置 业务逻辑处理类-->
+    <bean id="wxTaskObj" class="com.awareness.trows.util.wechatSDK.method.WxTicketTask"/>
+
+    <!--调度业务 将业务方法注入调度任务-->
+    <bean id="taskSch" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="wxTaskObj"/>
+        <property name="targetMethod" value="doTask"/>
+        <property name="concurrent" value="false"/> <!--关闭并发-->
+    </bean>
+
+    <!--定义调度规则-->
+    <bean id="taskTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+        <property name="jobDetail" ref="taskSch"/>  <!--将延迟规则关联至目标方法-->
+        <property name="startDelay" value="5000" />   <!-- 启动延迟5s-->
+        <property name="repeatInterval" value="6800000"/>   <!--每6800s执行一次-->
+        <!--<property name="repeatInterval" value="5000"/>-->
+    </bean>
+
+    <!--设置调度-->
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="taskTrigger"/>
+            </list>
+        </property>
+        <property name="taskExecutor" ref="executor"/>
+    </bean>
+    <!--=======================================定时任务结束========================================-->
+
+</beans>

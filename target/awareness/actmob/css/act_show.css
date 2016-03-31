@@ -1,0 +1,175 @@
+.navbar-fixed-top {
+    background: #5CB85C;
+    text-align: center;
+}
+
+.navbar-fixed-bottom {
+    z-index: 1;
+    background: #fff;
+    font-size: 1.3rem;
+}
+
+.navbar-fixed-top span {
+    color: #fff;
+    display: block;
+    font-size: 2rem;
+}
+
+/*#image .img-responsive{*/
+/*margin-top:2.9rem;*/
+/**/
+/*}*/
+/*#person_icon .img-circle{*/
+/*display: inline-block;*/
+/*margin-top:-13%;*/
+/*margin-left: 65%;*/
+/*}*/
+/*#person_icon  p{*/
+/*color: white;*/
+/*font-size: 1.3rem;*/
+/*margin:-10% 0 0 35%; */
+/*}*/
+.media-body p {
+    font-size: 1.3rem;
+    color: #666;
+    margin-top: 3%;
+    width: 15rem;
+}
+
+#myAct ul {
+    padding: 0;
+}
+
+#myAct ul li {
+    list-style: none;
+    margin: 1% 8% 0 10%;
+    padding-bottom: 1%;
+}
+
+#lanuch {
+    width: 35px;
+    height: 35px;
+    margin: 0 auto 0;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    background: #00E576;
+    border-radius: 50%;
+}
+
+.media-right a {
+    font-size: 1.5rem;
+    color: #A8A8A8;
+    margin-top: -1rem;
+}
+
+.media-right a:hover {
+    text-decoration: none;
+}
+
+.btn-success {
+    font-size: 1.5rem;
+    width: 50%;
+    height: 4rem;
+    margin-left: 25%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+#scroll {
+    margin-bottom: 5rem;
+    overflow-y: scroll;
+}
+
+#navbar-example .person {
+    margin-top: -3.5rem;
+}
+
+#navbar-example .person p {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+#myAct {
+    margin-top: 2%;
+}
+
+#mask {
+    background: #fff;
+    opacity: 0.93;
+    filter: alpha(opacity=93);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+#loading {
+    font-size: 1.1rem;
+    width: 45%;
+    height: 1.8rem;
+    text-align: center;
+    background: #DBDBDB;
+    border: 1px solid #DBDBDB;
+    border-radius: 7px;
+    margin: 5% auto 5%;
+}
+
+#loading a:hover {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+#close {
+    width: 100%;
+    position: fixed;
+    top: 93%;
+    z-index: 999999;
+    margin: 10px auto 10px;
+}
+
+#close img {
+    display: block;
+    margin: 0 auto 0;
+}
+
+#types {
+    width: 100%;
+    position: fixed;
+    top: 25%;
+    z-index: 999999;
+}
+
+#types .container {
+    margin-bottom: 5%;
+}
+
+#types img {
+    position: relative;
+    margin-bottom: 3.5rem;
+}
+
+.col-xs-12 img {
+    width: 100%;
+}
+
+.col-xs-3 {
+    display: inline-block;
+    height: 10rem;
+    margin-left: 6.25%;
+}
+
+.col-xs-3 p {
+    font-size: 1.3rem;
+    color: #555555;
+}
+
+.col-xs-3 {
+    text-align: center;
+}
+
+.words {
+    height: 2rem;
+}

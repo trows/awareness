@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.awareness.trows.entity.ActPat">
+
+    <!--参与活动（已使用）-->
+    <insert id="joinActivity" parameterType="ActPat">
+        INSERT INTO ActPat(activityId,participator,message,state,joinTime,patName) VALUES
+          (#{activityId,jdbcType=BIGINT},#{participator,jdbcType=BIGINT},#{message,jdbcType=VARCHAR},
+          #{state,jdbcType=TINYINT},NOW(),#{patName,jdbcType=VARCHAR});
+    </insert>
+
+    <!--通过活动activityId获取某个活动的参与信息 并通过参与活动时间排序（已使用）-->
+    <select id="getJoinInfo" parameterType="Long" resultType="ActPat">
+        SELECT id,activityId,participator,state,praise,joinTime,patName FROM ActPat
+        WHERE activityId = #{activityId} ORDER BY joinTime DESC
+    </select>
+
+    <!--检测当前用户是否参与某项活动（已使用）-->
+    <select id="joinCheck" parameterType="ActPat" resultType="Long">
+        SELECT participator FROM ActPat WHERE activityId = #{activityId} and participator=#{participator} limit 1
+    </select>
+
+</mapper>

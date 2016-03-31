@@ -1,0 +1,164 @@
+#header{
+  height:7rem;
+  width:100%;
+  background: url(../asset/pic-bg.png) no-repeat center center ;
+  position: absolute;
+  z-index: 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  // -webkit-filter: blur(5px); /* Chrome, Opera */
+  // -moz-filter: blur(5px);
+  // -ms-filter: blur(5px);   
+  // filter: blur(5px);
+  // filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=5, MakeShadow=false); /* IE6~IE9 */
+  .header-message{
+    position: absolute;
+    width:80%;
+    height: 150px;
+    top:50%;
+    left:50%;
+    margin: -45px  0 0 -40%;
+    color:white;
+    .header-head{
+      position: absolute;
+      z-index: 999;
+      left:50%;
+      margin-left:-50px;
+
+    }
+    .header-name{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 22px;
+    font-size: 18px;
+    }
+    .header-describe{
+      width:100%;
+      position: absolute;
+      bottom: 0;
+      p{
+      line-height: 30px;
+      text-align: center;
+      }
+     
+    }
+    // img{
+    //  width: 2rem;
+    // position: absolute;
+    // z-index: 999;
+    // left: 50%;
+    // margin-left: -1rem;
+    // -webkit-filter: blur(0); /* Chrome, Opera */
+    // -moz-filter: blur(0);
+    // -ms-filter: blur(0);   
+    // filter: blur(0);
+    // filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=0, MakeShadow=false); /* IE6~IE9 */
+    // }
+
+  }
+
+}
+#body{
+  width: 100%;
+  position: absolute;
+  top: 7rem;
+  .act-btn{
+    list-style: none;
+    height: 1rem;
+    .active{
+      border-bottom: 3px solid #3BB372;
+    }
+    li{
+      width:50%;
+      height:40px;
+      line-height: 40px;
+      text-align: center;
+      float: left;
+      font-size: 14px;
+      font-weight: 600;
+      color: #989898;
+      background: white;
+    }
+
+  }
+  .person{
+  width:95%;
+  height:4rem;
+  margin:0 auto;
+  position: relative;
+  
+  .act-messgae{
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    margin-left:-47.5%;
+    width: 95%;
+      height:3.5rem;
+      background: white;
+      border-radius: 3px;
+      .headimg{
+        background: white;
+        position: absolute;
+        left:12px;
+        top:12px;
+        img{
+          width:1.7rem;
+        }
+      }
+      .act-con{
+         position: absolute;
+         left:2.1rem;
+         top:12px;
+         .per-name{
+          font-size: 16px;
+          color:#1276A9;
+          }
+         .act-tag{
+          font-size: 13px;
+          color: #4D4D4D;
+          font-weight: bold;
+         }
+        li{
+          list-style: none;
+          text-align: left;
+          line-height:18px;
+          img{
+            width:0.3rem;
+            vertical-align: middle;
+            padding-right: 5px;
+          }
+        }
+
+      }
+      .act-member{
+        width: 95%;
+        height:1rem;
+        line-height:1rem;
+        position: absolute;
+        bottom:0;
+        border-top: 1px solid #F5F5F5;
+        list-style: none;
+        li{
+          float: left;
+        }
+        img{
+          width:0.65rem;
+          vertical-align: middle;
+          margin-left: 10px;
+
+        }
+      }
+  }
+}
+}
+@media (min-width: 500px) {
+  #header,#body{
+    width:400px;
+    position: absolute;
+    left:50%;
+    margin-left:-200px;
+  }
+}

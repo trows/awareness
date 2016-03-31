@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.awareness.trows.entity.Account">
+    <!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache" />-->
+
+    <!--新建账户 持久化用户信息 （已使用）-->
+    <insert id="CreateNewAccount" parameterType="Account">
+        INSERT INTO account (userId,accessToken,headimgurl,nickName,sex,province,city,country,priviege,unionid,refreshToken,openid,refreshTime)
+                VALUES (#{userId,jdbcType=BIGINT},#{accessToken,jdbcType=VARCHAR},#{headimgurl,jdbcType=VARCHAR},#{nickName,jdbcType=VARCHAR},
+                #{sex,jdbcType=TINYINT},#{province,jdbcType=VARCHAR},#{city,jdbcType=VARCHAR},#{country,jdbcType=VARCHAR},
+                #{priviege,jdbcType=VARCHAR},#{unionid,jdbcType=VARCHAR},#{refreshToken,jdbcType=VARCHAR},#{openid,jdbcType=VARCHAR},
+                #{refreshTime,jdbcType=BIGINT});
+    </insert>
+
+    <!--当用户信息过期时，更新账户信息（已使用）-->
+    <update id="updateAcc" parameterType="Account">
+        UPDATE account SET accessToken = #{accessToken,jdbcType=VARCHAR},headimgurl = #{headimgurl,jdbcType=VARCHAR},
+            nickName = #{nickName,jdbcType=VARCHAR},sex = #{sex,jdbcType=TINYINT},province = #{province,jdbcType=VARCHAR},
+            city = #{city,jdbcType=VARCHAR},country = #{country,jdbcType=VARCHAR},priviege = #{priviege,jdbcType=VARCHAR},
+            unionid= #{unionid,jdbcType=VARCHAR}, refreshToken = #{refreshToken,jdbcType=VARCHAR},refreshTime = #{refreshTime,jdbcType=BIGINT}
+            WHERE openid = #{openid};
+    </update>
+
+    <!--通过微信返回的openid获取数据库里已存在的用户信息（已使用）-->
+    <select id="getAccByOid" parameterType="String" resultType="Account">
+      SELECT userId,accessToken,headimgurl,nickName,sex,province,city,country,priviege,unionid,refreshToken,openid,refreshTime FROM account
+      WHERE openid = #{openid};
+    </select>
+
+    <!--通过用户id获取用户信息-->
+    <select id="getUserInfo" parameterType="Long" resultType="Account">
+        SELECT userId,nickName,sex,province,city,country FROM account WHERE userId = #{userId}
+    </select>
+</mapper>
