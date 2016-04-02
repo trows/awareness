@@ -61,7 +61,7 @@
     </div>
     <!--参与者列表-->
     <div class="act-join">
-        <p>参与者<span>(${act.getJoinNow()}/${act.getPersonNumber()})</span></p>
+        <p>参与者<span>(<span id="joinSp">${act.getJoinNow()}</span>/${act.getPersonNumber()})</span></p>
         <!--成员列表-->
         <ul class="act-member">
 
@@ -90,11 +90,10 @@
 <input type="hidden" id="basePath" value="<%=basePath%>">
 <input type="hidden" id="actUserId" value="${act.getUserId()}">
 <input type="hidden" id="nowUserId" value="${userId}">
-
+<input type="hidden" id="nowUserName" value="${nickName}">
 <input type="hidden" id="shareNow" value="${shareNow}">
 <input type="hidden" id="pageToken" value="${token}">
 <input type="hidden" id="joinNow" value="${act.getJoinNow()}">
-
 <input type="hidden" id="deadLine" value="${act.getDeadLine()}">
 
 <script src="./shareJoy/js/zepto.min.js"></script>

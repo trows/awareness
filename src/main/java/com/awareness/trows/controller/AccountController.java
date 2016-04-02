@@ -62,7 +62,7 @@ public class AccountController {
             HttpSession session = request.getSession(true);
             String Goto = (String) session.getAttribute("Goto");
             session.setAttribute("userId", account.getUserId());
-            session.setAttribute("userName", account.getUserName());
+            session.setAttribute("nickName", account.getNickName());
             session.setAttribute("userType",account.getUserType());
             if(Goto==null ||Goto.equals("/activity/login.jsp")){
                 request.getRequestDispatcher("./activity/welcome.jsp").forward(request,response);   //因为不确定转发的是命令还是

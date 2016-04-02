@@ -13,6 +13,7 @@ function getInfo() {
         type: 'POST',
         url: './getMyJoinActivityListByUserId.do',
         timeout: 5000,
+        async:false,
         dataType: 'json',      //声明返回文件类型
         data: [
             {name: "pageNow", value: ac_total / ac_pageSize + 1}, //发送分页所需数据
@@ -48,7 +49,7 @@ function getInfo() {
                         '<li class="act-place"><img src="./shareJoy/asset/place.png">' + location + '</li>' +//活动地点
                         '</ul>' +
                         '</a>' +
-                        '<ul class="act-member act-member' + classNum + '">' +
+                        '<ul class="act-member act-member' + classNum + '" data = '+jsonData[i].activityId+'>' +
                         '</ul>' +
                         '</div>' +
                         '</div>';
@@ -78,7 +79,7 @@ function getInfo() {
                         data: [
                             {name: "pageNow", value: 1},     //提供所需要的页数
                             {name: "pageSize", value: 7},  //提供没页的大小
-                            {name: "actId", value: jsonData[i].activityId} //提供页面的id
+                            {name: "actId", value: divList[i].getAttribute("data")} //提供页面的id
 
                         ],
                         success: function (JData) {
@@ -87,12 +88,14 @@ function getInfo() {
                             if (JData != null) {
                                 var length = JData.length;
                                 var li = document.createElement("li");
+                                var htmlText="";
                                 for (var j = 0; j < length; j++) {
                                     //alert(JData[j].participator);
-                                    li.innerHTML = '<img src="' + imgpath + JData[j].participator + '.jpg">';
+                                     htmlText = htmlText + '<img src="' + imgpath + JData[j].participator + '.jpg">';
                                     //console.log("thr"+i);
-                                    divList[i].appendChild(li);
                                 }
+                                li.innerHTML =htmlText;
+                                divList[i].appendChild(li);
                             }
                         }
                     })

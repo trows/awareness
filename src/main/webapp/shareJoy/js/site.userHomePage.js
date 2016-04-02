@@ -24,6 +24,8 @@ function getInfo() {
             var jsonData = data;
             if (jsonData != null) {
                 var size = jsonData.length;
+                var myAct = document.getElementById("myAct");
+                var myJoinAct = document.getElementById("myJoinAct");
                 for (var i = 0; i < size; i++) { //遍历 为页面添加节点
 
                     //声明需要增加的节点
@@ -36,7 +38,6 @@ function getInfo() {
                     var userName = jsonData[i].userName;
 
                     var htm = '<div class="person">' +
-                        '<span class="time" >' + createTime + '</span>' +
                         '<a href="' + link + '">' +
                         '<div class="act-messgae">' +
                         '<div class="headimg">' +
@@ -49,19 +50,23 @@ function getInfo() {
                         '<li class="act-place"><img src="./shareJoy/asset/place.png">' + location + '</li>' +//活动地点
                         '</ul>' +
                         '</a>' +
-                        '<ul class="act-member act-member' + classNum + '">' +
+                        '<ul class="act-member act-member' + classNum + '" data = '+jsonData[i].activityId+'>' +
                         '</ul>' +
                         '</div>' +
                         '</div>';
 
-                    var body = document.getElementById("body");//获取将增加节点的父节点
+
                     var div = document.createElement("div");
                     div.innerHTML = htm;   //写入节点信息
-                    body.appendChild(div); //更改页面dom节点
+                    if(jsonData[i].userId == userId){
+                        myAct.appendChild(div);
+                    }else {
+                        myJoinAct.appendChild(div);
+                    }
                     ac_total++;    //计数器总数加一
 
                 }
-                //填充活动参与信息
+                //填充活动参与信息   存在重大bug  ！！！！
                 var className = 'act-member' +classNum;
                 //console.log(className);
                 var divList = document.getElementsByClassName(className);
@@ -79,7 +84,7 @@ function getInfo() {
                         data: [
                             {name: "pageNow", value: 1},     //提供所需要的页数
                             {name: "pageSize", value: 7},  //提供没页的大小
-                            {name: "actId", value: jsonData[i].activityId} //提供页面的id
+                            {name: "actId", value: divList[i].getAttribute("data")} //提供页面的id
 
                         ],
                         success: function (JData) {
@@ -88,12 +93,14 @@ function getInfo() {
                             if (JData != null) {
                                 var length = JData.length;
                                 var li = document.createElement("li");
+                                var htmlText="";
                                 for (var j = 0; j < length; j++) {
                                     //alert(JData[j].participator);
-                                    li.innerHTML = '<img src="' + imgpath + JData[j].participator + '.jpg">';
+                                    htmlText = htmlText + '<img src="' + imgpath + JData[j].participator + '.jpg">';
                                     //console.log("thr"+i);
-                                    divList[i].appendChild(li);
                                 }
+                                li.innerHTML =htmlText;
+                                divList[i].appendChild(li);
                             }
                         }
                     })
@@ -104,3 +111,6 @@ function getInfo() {
 
     })
 }
+
+
+

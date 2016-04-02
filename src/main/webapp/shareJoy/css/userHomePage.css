@@ -134,6 +134,8 @@
   -moz-border-radius:0.31rem;
   border-radius:0.31rem;
 }
+a{color:#000}
+a:hover{color:#000}
 @media (min-width: 500px) {
   #header,
   #body {

@@ -42,7 +42,7 @@ public class ActPatController {
     public void joinActivity(HttpServletRequest request,HttpServletResponse response){
         HttpSession session = request.getSession();
         String id = request.getParameter("actId");
-        String patName = request.getParameter("patName");
+        String patName = (String) session.getAttribute("nickName");
         String pageToken = request.getParameter("pageToken");
         String actMaStr = request.getParameter("actMaster");
         String token = (String)session.getAttribute("token");

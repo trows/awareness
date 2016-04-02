@@ -4,13 +4,14 @@ var imgUrl = document.getElementById("img").value;
 var link = document.getElementById("basePath").value;
 var nowUserId = document.getElementById("nowUserId").value;
 var actUserId = document.getElementById("actUserId").value;
+var nowUserName = document.getElementById("nowUserName").value;
 var actId = document.getElementById("actId").value;
 var shareNow = document.getElementById("shareNow").value + 1;
 var pageToken = document.getElementById("pageToken").value;
 var ul = document.getElementById("joinInfo");
 var joinNow = document.getElementById("joinNow").value;
 var perNum = document.getElementById("perNum").value;
-var deadLine = document.getElementById("deadLine").value;
+var startTime = document.getElementById("startTime").value;
 var actMember = document.getElementsByClassName("act-member");
 var joinText = document.getElementById("joinText");
 var joinButton = document.getElementById("joinButton");
@@ -151,14 +152,10 @@ function getJoinInfo(){
 
         success: function (data) {  //当参数成功返回时
             var size = data.length;
-            var link = "#";
 
             for (var i = 0; i < size; i++) {
                 var imgLink = imgUrl+data[i].participator+'.jpg';
-                if(nowUserId==actUserId){
-                    link = './'+data[i].participator+'/getAUserActList.do';
-                }
-                addJoinInfo(link,imgLink);
+                addJoinInfo(imgLink);
             }
 
         }
@@ -166,9 +163,9 @@ function getJoinInfo(){
 
 }
 
-function addJoinInfo(link,imgLink){
+function addJoinInfo(imgLink){
     var li = document.createElement("li");
-    var htm ='<a href="'+link+'"><img src="'+imgLink+'"></a>';
+    var htm ='<img src="'+imgLink+'">';
     li.innerHTML = htm;
     actMember[0].appendChild(li);
 }
@@ -201,11 +198,13 @@ function joinCheck() {
             if (data == 'true') {     //当用户已经参与活动时
                 joinText.innerHTML = '已参加';
             } else {
-                var str = deadLine.replace(/-/g,"/");
-                var lastDate = new Date(Date.parse(str));
+
+                var str = startTime.replace(/-/g,"/");
+                var lastDate = new Date(str);
                 var now = new Date();
 
-                if (joinNow < perNum && lastDate>now) {
+                //alert(joinNow+"--"+perNum+"--"+lastDate+"--"+now);
+                if (parseInt(joinNow) < parseInt(perNum)  && lastDate>now) {
                     joinText.innerHTML = '参加';
                     joinButton.onclick = function () {
                         joinAct();
@@ -227,7 +226,6 @@ function joinAct() {
         data: [
             {name: "actId", value: actId},
             {name: "pageToken", value: pageToken},    //提供活动的id
-            {name: "patName", value: nowUserName},
             {name: "actMaster" , value :actUserId}
         ],
 
@@ -236,11 +234,9 @@ function joinAct() {
                 joinButton.onclick = function () {
                 };
                 joinText.innerHTML = '已参加';
-                var myDate = new Date();
-                var imgLink = af_imgUrl+af_nowUserId+'.jpg';
-
-                var showNum = document.getElementById("showNum");
-                showNum.innerHTML = (af_joinNow+1)+'|'+af_perNum;
+                var imgLink = imgUrl+nowUserId+'.jpg';
+                addJoinInfo(imgLink);
+                document.getElementById("joinSp").innerHTML = parseInt(joinNow)+1+"";
                 alert("报名成功");
             } else {
                 alert("报名失败请再次尝试");

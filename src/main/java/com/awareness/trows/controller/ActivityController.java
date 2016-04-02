@@ -184,10 +184,12 @@ public class ActivityController {
         int pageSize = Integer.parseInt(request.getParameter("pageSize"));
         String uid = request.getParameter("userId");
         long userId;
-        if(uid=="" || uid==null){
+        if (uid == null || "".equals(uid)) {
             userId = (Long) session.getAttribute("userId");
-        }else{
-             userId = (Long) session.getAttribute("userId");
+
+        } else {
+            userId = Long.parseLong(uid);
+            System.out.println("userId");
         }
 
 
@@ -235,42 +237,50 @@ public class ActivityController {
 
     @RequestMapping("alterAct")
     public String alterAct(HttpServletRequest request) {
+        HttpSession session = request.getSession(true);
+        //防止页面后退重复提交
+        String token = (String) session.getAttribute("token");  //获取当前系统令牌
+        String pageToken = request.getParameter("pageToken");   //获取页面令牌
+        //=======================================
+        if (pageToken.equals(token)) {  //令牌验证成功
 
-        Long actId = Long.parseLong(request.getParameter("actId"));
-        int perNum = Integer.parseInt(request.getParameter("perNum"));
-        String location = request.getParameter("location");
-        String desc = request.getParameter("desc");
-        String startTime = request.getParameter("startTime");
-        String remark = request.getParameter("remark");
+            Long actId = Long.parseLong(request.getParameter("actId"));
+            int perNum = Integer.parseInt(request.getParameter("perNum"));
+            String location = request.getParameter("location");
+            String desc = request.getParameter("desc");
+            String startTime = request.getParameter("startTime");
+            String remark = request.getParameter("remark");
 
 //        System.out.println(actId+perNum+location+desc+startTime+remark+"hahahahahah");
 
-        Activity act = new Activity();
-        act.setPersonNumber(perNum);
-        act.setLocation(location);
-        act.setDescription(desc);
-        act.setStartTime(startTime);
-        act.setRemark(remark);
-        act.setActivityId(actId);
-        activityService.update(act, "alterAct");
+            Activity act = new Activity();
+            act.setPersonNumber(perNum);
+            act.setLocation(location);
+            act.setDescription(desc);
+            act.setStartTime(startTime);
+            act.setRemark(remark);
+            act.setActivityId(actId);
+            activityService.update(act, "alterAct");
 
-        Activity activity = activityService.getEntityByKey(actId, "getActivityById");
-        if (activity == null) return "/shareJoy/activityCircle";  //如果活动不存在  则跳转至个人主页
+            Activity activity = activityService.getEntityByKey(actId, "getActivityById");
+            if (activity == null) return "/shareJoy/activityCircle";  //如果活动不存在  则跳转至个人主页
 
-        String[] remarkList = activity.getRemark().split(";");
-        int size = remarkList.length;
-        if (size > 1) {
-            StringBuilder st = new StringBuilder();
-            st.append("<hr>");
-            for (int i = size - 1; i > size - 6 && i > 0; i--) {
-                st.append(remarkList[i]);
+            String[] remarkList = activity.getRemark().split(";");
+            int size = remarkList.length;
+            if (size > 1) {
+                StringBuilder st = new StringBuilder();
+                st.append("<hr>");
+                for (int i = size - 1; i > size - 6 && i > 0; i--) {
+                    st.append(remarkList[i]);
+                }
+                activity.setRemark(st.toString());
+            } else {
+                activity.setRemark("");
             }
-            activity.setRemark(st.toString());
-        } else {
-            activity.setRemark("");
-        }
 
-        request.setAttribute("act", activity);
+            request.setAttribute("act", activity);
+            session.removeAttribute("token");//提交成功移除token
+        }
         return "/shareJoy/activityDetail";
     }
 
