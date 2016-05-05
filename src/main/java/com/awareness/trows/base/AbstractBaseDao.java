@@ -61,7 +61,7 @@ public abstract class AbstractBaseDao <Entity, Key extends Serializable> impleme
      * @return
      */
     public Entity getEntityByKey( Key key, String operate) {
-        return idao.getEntityByKey(entityClass, key, operate);
+        return (Entity) idao.getEntityByKey(entityClass, key, operate);
     }
 
     public Entity getEntityByValue(Entity entity, String operate) {
@@ -69,7 +69,7 @@ public abstract class AbstractBaseDao <Entity, Key extends Serializable> impleme
     }
 
     public Entity getEntityByStr(String str,String operate){
-        return idao.getEntityByStr(entityClass, str, operate);
+        return (Entity) idao.getEntityByStr(entityClass, str, operate);
     }
 
     /**

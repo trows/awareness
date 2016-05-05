@@ -112,5 +112,10 @@ function getInfo() {
     })
 }
 
+//function setBackImg(){
+//    alert("你特么执行啊");
+//    document.getElementById('header').style.background='url('+imgpath+userId+'.jpg) no-repeat center center';
+//}
+
 
 

@@ -146,7 +146,8 @@ public class ActivityController {
         request.setAttribute("shareNow", shareNow);
         Relation relation = new Relation();
 
-        //========持久化用户关系数据===================
+
+        //========持久化用户关系数据===================暂时关闭
         long userId = (Long) session.getAttribute("userId");
         if (preUser != userId) {
             relation.setMasterId(preUser);

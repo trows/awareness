@@ -29,4 +29,8 @@
       WHERE openid = #{openid};
     </select>
 
+    <!--通过用户id获取用户信息-->
+    <select id="getUserInfo" parameterType="Long" resultType="Account">
+        SELECT userId,nickName,sex,province,city,country FROM account WHERE userId = #{userId}
+    </select>
 </mapper>

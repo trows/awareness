@@ -1,7 +1,6 @@
 #header {
   height: 7rem;
   width: 100%;
-  background: url(../asset/pic-bg.png) no-repeat center center;
   position: absolute;
   z-index: 0;
   -webkit-background-size: cover;
@@ -9,6 +8,18 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
+#under{
+  height: 7rem;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #header .header-message {
   position: absolute;
   width: 80%;
@@ -17,6 +28,17 @@
   left: 50%;
   margin: -45px 0 0 -40%;
   color: white;
+}
+#header .personHead{
+  position: absolute;
+  z-index:9999;
+  left:50%;
+  top:.25rem;
+  margin-left:-1rem;
+  display: block;
+  width:2rem;
+  height:2rem;
+  border-radius: 1rem;
 }
 #header .header-message .header-head {
   position: absolute;
@@ -134,8 +156,6 @@
   -moz-border-radius:0.31rem;
   border-radius:0.31rem;
 }
-a{color:#000}
-a:hover{color:#000}
 @media (min-width: 500px) {
   #header,
   #body {
@@ -145,3 +165,5 @@ a:hover{color:#000}
     margin-left: -200px;
   }
 }
+a{color:#000}
+a:hover{color:#000}

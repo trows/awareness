@@ -61,6 +61,8 @@ public class AccountController {
         if ( account!=null && account.getAccessToken().equals(accessToken)){
             HttpSession session = request.getSession(true);
             String Goto = (String) session.getAttribute("Goto");
+
+
             session.setAttribute("userId", account.getUserId());
             session.setAttribute("nickName", account.getNickName());
             session.setAttribute("userType",account.getUserType());

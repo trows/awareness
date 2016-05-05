@@ -71,6 +71,11 @@ public class LoginFilter implements Filter {
                 ){
             String BaseUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+WeChatInfo.appID+"&redirect_uri="+ WeChatInfo.redirect_uri+"&response_type=code&scope=snsapi_base&state="+requestPath+"o#wechat_redirect";
             //此URL为需要用户授权
+//            session.setAttribute("opendId","oJZicwtURO78JTmkjOIw7OtaSL0s");
+//            session.setAttribute("userId", "86514596435011");
+//            session.setAttribute("nickName", "测试号");
+//            session.setAttribute("userType", "1");
+//            filterChain.doFilter(servletRequest,servletResponse);   //放行
             response.sendRedirect(BaseUrl);                                            //跳转至微信授权页面
         }else {
             filterChain.doFilter(servletRequest,servletResponse);   //放行
