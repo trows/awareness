@@ -95,7 +95,7 @@ window.onload=function(){
                         //alert('用户点击发送给朋友');
                     },
                     success: function () {
-                        //alert('已分享给朋友');
+                        $("#dialod").hide();
                     },
                     cancel: function () {
                         alert('已取消');
@@ -116,7 +116,7 @@ window.onload=function(){
                         //alert('用户点击分享到朋友圈');
                     },
                     success: function () {
-                        //alert('已分享至朋友圈');
+                        $("#dialod").hide();
                     },
                     cancel: function () {
                         alert('已取消');
@@ -199,11 +199,17 @@ function joinCheck() {
                 joinText.innerHTML = '已参加';
             } else {
 
-                var str = startTime.replace(/-/g,"/");
-                var lastDate = new Date(str);
+                var s = startTime.replace(/[ :]/g, "-").split("-");
+                var lastDate = new Date( s[0], s[1]-1, s[2], s[3], s[4], s[5] );
+                // alert(s[0]+'-'+s[1]+'-'+s[2]+'-'+s[3]+'-'+s[4]+'-'+s[5]);
+                // alert(lastDate);
+              // var str = startTime.replace(/-/g,"/");
+                // var lastDate = new Date(Date.parse(str));
+                // alert(lastDate +'+++++++++++');
                 var now = new Date();
 
-                //alert(joinNow+"--"+perNum+"--"+lastDate+"--"+now);
+                // alert(joinNow+"--"+perNum+"--"+lastDate+"--"+now);
+                // alert(lastDate>now);
                 if (parseInt(joinNow) < parseInt(perNum)  && lastDate>now) {
                     joinText.innerHTML = '参加';
                     joinButton.onclick = function () {

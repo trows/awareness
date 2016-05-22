@@ -45,7 +45,7 @@ function getInfo() {
                         '<ul class="act-con">' +
                         '<li class="per-name">' + userName + '</li>' +   //活动发起者昵称
                         '<li class="act-tag">' + actName + '</li>' +    //活动名称
-                        '<li class="act-time"><img src="./shareJoy/asset/time.png" />' + startTime + '</li>' +     //活动开始时间
+                        '<li class="act-time"><img src="./shareJoy/asset/time.png" />' + startTime.substring(0,16) + '</li>' +     //活动开始时间
                         '<li class="act-place"><img src="./shareJoy/asset/place.png">' + location + '</li>' +//活动地点
                         '</ul>' +
                         '</a>' +

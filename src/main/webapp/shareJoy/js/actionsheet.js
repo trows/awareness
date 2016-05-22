@@ -10,6 +10,7 @@ $(function () {
               var weuiActionsheet = $('#weui_actionsheet');
               weuiActionsheet.addClass('weui_actionsheet_toggle');
               mask.show().addClass('weui_fade_toggle').click(function () {
+                        $(".share-box").hide();
                         hideActionSheet(weuiActionsheet, mask);
              });
             $('#actionsheet_cancel').click(function () {

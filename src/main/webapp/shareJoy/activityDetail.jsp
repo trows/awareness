@@ -1,6 +1,7 @@
 <%@ page import="com.awareness.trows.util.wechatSDK.entity.WeChatInfo" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 <%
@@ -15,9 +16,9 @@
     <title>活动详情</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
     <link rel="stylesheet" type="text/css" href="./shareJoy/css/base.css">
     <link rel="stylesheet" type="text/css" href="./shareJoy/css/activityDetail.css">
     <link rel="stylesheet" type="text/css" href="./shareJoy/css/weui.min.css">
@@ -36,13 +37,13 @@
     <div class="act-head-message">
         <!--头像-->
         <a href="./${act.getUserId()}/getUserInfo.do">
-        <img class="headimg" src="<%=imgPath%>${act.getUserId()}.jpg"/>
+            <img class="headimg" src="<%=imgPath%>${act.getUserId()}.jpg"/>
         </a>
         <ul class="detail">
             <!--用户名-->
             <li class="per-name">${act.getUserName()}</li>
             <!--发布时间-->
-            <li class="act-tag">${act.getCreateTime()}</li>
+            <li class="act-tag">${fn:substring(act.getCreateTime(),0,16)}</li>
         </ul>
         <p>${act.getActivityTitle()}</p>
     </div>
@@ -51,7 +52,7 @@
             <!--地点-->
             <li class="place">${act.getLocation()}</li>
             <!--时间-->
-            <li class="time">${act.getStartTime()}</li>
+            <li class="time">${fn:substring(act.getStartTime(),0,16)}</li>
         </ul>
     </div>
     <!--活动详情-->
@@ -71,7 +72,7 @@
 </div>
 <!--底部按钮-->
 <div class="act-btn">
-    <div class="overdue" id="joinButton"><span id = "joinText">已过期</span></div>
+    <div class="overdue" id="joinButton"><span id="joinText">已过期</span></div>
     <div class=" share bd spacing">
         <a href="javascript:;" class="weui_btn weui_btn_primary" id="showDialog1">分享</a>
     </div>
@@ -83,6 +84,7 @@
     <input type="hidden" id="perNum" name="perNum" value="${act.getPersonNumber()}">
     <input type="hidden" id="location" name="location" value="${act.getLocation()}">
     <input type="hidden" id="startTime" name="startTime" value="${act.getStartTime()}">
+    <input type="hidden" id="nowPerson" name="nowPerson" value="${act.getJoinNow()}">
 </form>
 <input type="hidden" id="userName" value="${act.getUserName()}">
 

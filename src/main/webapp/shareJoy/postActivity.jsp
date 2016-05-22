@@ -33,38 +33,19 @@
 	 <input type="hidden" name="pageToken" value="${token}">
 
  	    <!--活动人数-->
-	 	<input placeholder="活动人数" name="actNum"/>
+	 	<input placeholder="活动人数"  id="actNum" name="actNum"/>
 	 	<!--活动时间-->
 		<div class="page page-current" id='page-datetime-picker'>
 			<input type="text" placeholder="" id='datetime-picker' name="startTime" />
 		</div>
         <!--活动内容-->
-	 	<textarea class="act-content" placeholder="活动简述" name="actName"></textarea>
+	 	<textarea class="act-content" id="actName" placeholder="活动简述" name="actName"></textarea>
 	 	<!--发布按钮-->
-	 	<button type="submit" class="act-public weui_btn weui_btn_primary">发布活动</button>
+	 	<button type="button" onclick="sub()" class="act-public weui_btn weui_btn_primary">发布活动</button>
 	 </div>
  </form>
  <%--<script src="postActivity.jsp" type="javascript"></script>--%>
 <script type="text/javascript" src="./shareJoy/js/sm.min.js"></script>
-<script type="text/javascript">
-	$(function(){
-
-		$(document).on("pageInit", "#page-datetime-picker", function(e) {
-			$("#datetime-picker").datetimePicker({
-				toolbarTemplate: '<header class="bar bar-nav">\
-          <button class="button button-link pull-right close-picker">确定</button>\
-          <h1 class="title">选择日期和时间</h1>\
-          </header>'
-			});
-			//设置默认时间
-			$("#datetime-picker").datetimePicker({
-				value: ['1985', '12', '04', '9', '34']
-			});
-		});
-
-
-		$.init();
-	})
-</script>
+<script type="text/javascript" src="./shareJoy/js/site.postActivity.js"></script>
 </body>
 </html>

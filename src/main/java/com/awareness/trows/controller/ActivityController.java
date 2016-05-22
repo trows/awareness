@@ -60,12 +60,8 @@ public class ActivityController {
                 e.printStackTrace();
             }
             String activityTitle = request.getParameter("actName");     //活动标题--
-            String description = request.getParameter("disc");   //活动描述--
-            String startTime = request.getParameter("appDateTime1");   //开始时间--
-            String endTime = request.getParameter("appDateTime2");       //结束时间--
-            String deadLine = request.getParameter("appDateTime3");//报名截止时间--
-            int personNumber = Integer.parseInt(request.getParameter("actNum"));//活动人数--
-            String location = request.getParameter("actPlace");//活动地点--
+            String startTime = request.getParameter("startTime");   //开始时间--
+            int personNumber = Integer.parseInt(request.getParameter("actNum").trim());//活动人数--
 //            int shareDepth = Integer.parseInt(request.getParameter("shareDepth"));//分享深度**
             long userId = (Long) session.getAttribute("userId");//通过session获取当前用户的id--
             String userName = (String) session.getAttribute("nickName");
@@ -75,14 +71,11 @@ public class ActivityController {
             Activity activity = new Activity(); //创建活动对象
             activity.setActivityTitle(activityTitle);   //注入活动信息
             activity.setActivityId(activityId);
-            activity.setDescription(description);
             activity.setStartTime(startTime);
-            activity.setEndTime(endTime);
+
             activity.setPersonNumber(personNumber);
-            activity.setLocation(location);
             activity.setShareDepth(1);//&&  控制分享深度
             activity.setUserId(userId);
-            activity.setDeadLine(deadLine);
             activity.setTypeName(actType);
             activity.setUserName(userName);
             activity.setJoinNow(1);
@@ -246,7 +239,7 @@ public class ActivityController {
         if (pageToken.equals(token)) {  //令牌验证成功
 
             Long actId = Long.parseLong(request.getParameter("actId"));
-            int perNum = Integer.parseInt(request.getParameter("perNum"));
+            int perNum = Integer.parseInt(request.getParameter("perNum").trim());
             String location = request.getParameter("location");
             String desc = request.getParameter("desc");
             String startTime = request.getParameter("startTime");

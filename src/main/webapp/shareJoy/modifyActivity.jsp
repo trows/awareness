@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -49,31 +49,12 @@
 </form>
 <input type="hidden" id="perPerNum" value="${param.perNum}">
 <input type="hidden" id="perLocation" value="${param.location}">
-<input type="hidden" id="perStartTime" value="${param.startTime}">
-<input type="hidden" id="perDesc" ${param.desc}>
+<input type="hidden" id="perStartTime" value="${fn:substring(param.startTime,0,16)}">
+<input type="hidden" id="perDesc" value="${param.desc}">
+<input type="hidden" id="nowPerson" value="${param.nowPerson}" >
 
-
-<script src="./shareJoy/js/site.modifyActivity.js"></script>
 <script type="text/javascript" src="./shareJoy/js/sm.min.js"></script>
-<script type="text/javascript">
-    $(function(){
+<script src="./shareJoy/js/site.modifyActivity.js"></script>
 
-        $(document).on("pageInit", "#page-datetime-picker", function(e) {
-            $("#datetime-picker").datetimePicker({
-                toolbarTemplate: '<header class="bar bar-nav">\
-          <button class="button button-link pull-right close-picker">确定</button>\
-          <h1 class="title">选择日期和时间</h1>\
-          </header>'
-            });
-            //设置默认时间
-            $("#datetime-picker").datetimePicker({
-                value: ['1985', '12', '04', '9', '34']
-            });
-        });
-
-
-        $.init();
-    })
-</script>
 </body>
 </html>
